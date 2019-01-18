@@ -23,17 +23,22 @@ public class StoryLine {
 		// Intro
 		System.out.println("\n\nWelcome to 'Confusion'");
 		System.out.println(
-				"This is a simulation of a more realistic version of the game of life, set on the college campus of your choice.");
+				"This is a simulation of a more realistic "
+				+ "version of the game of life, "
+				+ "set on the college campus of your choice.");
 		Player player = new Player(50);
 		System.out.println(
-				"What is your name? \nUse the space below for your reponse, then press enter.");
+				"What is your name? "
+				+ "\nUse the space below for your reponse, then press enter.");
 		player.setName(playerInput.nextLine());
 		System.out.println(
-				"What is your chosen university? \nAgain, press enter after entering your response.");
+				"What is your chosen university? "
+				+ "\nAgain, press enter after entering your response.");
 		player.setUniversity(playerInput.nextLine());
 
 		System.out.println(
-				"Hit enter to begin your journey. If not, turn back now for there is no return \n(You can enter 0 to log off at any point).");
+				"Hit enter to begin your journey. If not, turn back now for "
+				+ "there is no return \n(You can enter 0 to log off at any point).");
 		playerContinue = playerInput.nextLine();
 		//
 
@@ -76,7 +81,8 @@ public class StoryLine {
 				// Choice 3a
 				if (choice == 1) {
 					System.out.println(player.getName()
-							+ " falls into a pit of skipping classes after leaving this one early.");
+							+ " falls into a pit of skipping "
+							+ "classes after leaving this one early.");
 					dockSanityLoop(player);
 					gameEnd(player);
 				}
@@ -86,7 +92,8 @@ public class StoryLine {
 							+ " participates in class.\n\nWould "
 							+ player.getName() + " like to:");
 					System.out.println(
-							"\n1) Ask the professor about research he/she is doing \n2) Go workout");
+							"\n1) Ask the professor about research "
+							+ "he/she is doing \n2) Go workout");
 					sanityAdjust(player);
 					playerSelection = playerInput.nextInt();
 					checkValidResponseAndExit(playerSelection);
@@ -94,10 +101,12 @@ public class StoryLine {
 					// Choice 4a
 					if (choice == 1) {
 						System.out.println(player.getName()
-								+ " asks their professor about research opportunities.\n\nWould "
+								+ " asks their professor about research "
+								+ "opportunities.\n\nWould "
 								+ player.getName() + " like to:");
 						System.out.println(
-								"\n1) Start working in their lab \n2) Take some time to 'think about it'");
+								"\n1) Start working in their lab "
+								+ "\n2) Take some time to 'think about it'");
 						sanityAdjust(player);
 						playerSelection = playerInput.nextInt();
 						checkValidResponseAndExit(playerSelection);
@@ -105,13 +114,15 @@ public class StoryLine {
 						// Choice 5a
 						if (choice == 1) {
 							System.out.println(
-									"Congratulations for making it down the only path possible with sanity left. \nThanks for playing!");
+									"Congratulations for making it down the only path "
+									+ "possible with sanity left. \nThanks for playing!");
 							gameEnd(player);
 						}
 						// 5a
 						else if (choice == 2) {
 							System.out.println(player.getName()
-									+ " decides to pass on the professor's offer and comes to regret it a few weeks later.");
+									+ " decides to pass on the professor's offer and comes "
+									+ "to regret it a few weeks later.");
 							dockSanityLoop(player);
 							gameEnd(player);
 						}
@@ -131,7 +142,8 @@ public class StoryLine {
 						+ " makes it to professor office hours.\n\nWould "
 						+ player.getName() + " like to:");
 				System.out.println(
-						"\n1) Ask about other students in the class. \n2) Ask questions about the course material.");
+						"\n1) Ask about other students in the class. "
+						+ "\n2) Ask questions about the course material.");
 				sanityAdjust(player);
 				playerSelection = playerInput.nextInt();
 				checkValidResponseAndExit(playerSelection);
@@ -142,7 +154,8 @@ public class StoryLine {
 							+ " asks about other students in the class.\n\nWould "
 							+ player.getName() + " like to:");
 					System.out.println(
-							"\n1) Ask for an A. \n2) Ask questions about the course material.");
+							"\n1) Ask for an A. \n2) Ask questions "
+							+ "about the course material.");
 					playerSelection = playerInput.nextInt();
 					checkValidResponseAndExit(playerSelection);
 					System.out.println("Just kidding! " + player.getName()
@@ -156,7 +169,8 @@ public class StoryLine {
 							+ " asks about the course material.\n\nWould "
 							+ player.getName() + " like to:");
 					System.out.println(
-							"\n1) Ask for an A. \n2) Ask questions about the course material.");
+							"\n1) Ask for an A. \n2) Ask questions "
+							+ "about the course material.");
 					sanityAdjust(player);
 					playerSelection = playerInput.nextInt();
 					checkValidResponseAndExit(playerSelection);
@@ -169,8 +183,8 @@ public class StoryLine {
 					}
 					// 4c
 					else if (choice == 2) {
-						System.out.println(
-								player.getName() + " is told to Google their question...");
+						System.out.println(player.getName()
+								+ " is told to Google their question...");
 						dockSanityLoop(player);
 						gameEnd(player);
 					}
@@ -180,7 +194,8 @@ public class StoryLine {
 		// 1
 		else if (playerSelection == 2) {
 			System.out.println(
-					"You continue to put off getting out of bed and sleep through the whole day.");
+					"You continue to put off getting out of "
+					+ "bed and sleep through the whole day.");
 			dockSanityLoop(player);
 			gameEnd(player);
 		}
@@ -214,7 +229,8 @@ public class StoryLine {
 		}
 	}
 
-	public static void dockSanityLoop(Player player) throws InterruptedException {
+	public static void dockSanityLoop(Player player)
+			throws InterruptedException {
 		System.out.println("Sanity levels dropping fast:");
 		while (player.getSanity() > 0) {
 			player.setSanity(player.getSanity() - 5);
